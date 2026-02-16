@@ -1,7 +1,7 @@
-import { defineConfig } from 'eslint/config'
-import js from '@eslint/js'
-import tseslint from 'typescript-eslint'
-import reactHooks from 'eslint-plugin-react-hooks'
+import { defineConfig } from 'eslint/config';
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export default defineConfig(
   js.configs.recommended,
@@ -13,4 +13,4 @@ export default defineConfig(
     },
   },
   { ignores: ['dist'] }
-)
+);
