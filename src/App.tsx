@@ -1,5 +1,7 @@
+import Newsletter from './Newsletter/Newsletter';
+
 const App = () => {
-  return <h1>Hello world</h1>;
+  return <Newsletter />;
 };
 
 export default App;
