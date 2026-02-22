@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import styles from './List.module.css';
+import styles from './Bullet.module.css';
 
 interface Props {
   texts: Array<string>;
