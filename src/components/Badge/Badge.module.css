@@ -1,0 +1,20 @@
+.badge {
+  background-color: var(--color-white);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 9999px;
+  font-size: var(--text-size-sm);
+  line-height: var(--text-line-sm);
+  text-align: center;
+}
+
+.success {
+  color: #15803d;
+}
+
+.error {
+  color: #991b1b;
+}
+
+.warning {
+  color: #b45309;
+}
