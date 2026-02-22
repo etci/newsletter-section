@@ -61,7 +61,7 @@ const EmailField: FC<Props> = (props) => {
           className={styles.input}
           id={id}
           name={id}
-          type="email"
+          type="text"
           placeholder={placeholder}
           value={value}
           onChange={(evt) => onChange(evt.target.value)}
@@ -84,7 +84,7 @@ const EmailField: FC<Props> = (props) => {
         className={styles.input}
         id={id}
         name={id}
-        type="email"
+        type="text"
         placeholder={placeholder}
         defaultValue={defaultValue}
         {...rest}

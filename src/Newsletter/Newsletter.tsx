@@ -1,18 +1,20 @@
-import Bullet from '@/components/Bullet/Bullet';
-import { SubmitEventHandler, useMemo } from 'react';
+import { subscribe } from '@/api';
 import checkIcon from '@/assets/icons/check-fill.svg';
 import abstract from '@/assets/images/abstract.jpg';
+import Bullet from '@/components/Bullet/Bullet';
 import Button from '@/components/Button/Button';
-import styles from './Newsletter.module.css';
 import EmailField from '@/components/EmailField/EmailField';
-import { vldt } from '@kutayetci/vldt';
-import { subscribe } from '@/api';
 import { toastr } from '@/utils/toastr';
+import { vldt } from '@kutayetci/vldt';
+import { SubmitEventHandler, useMemo, useState } from 'react';
+import styles from './Newsletter.module.css';
 
 const EMAIL_FORMAT_ERROR_MESSAGE = 'Please enter a valid email address';
 const EMAIL_REQUIRED_ERROR_MESSAGE = 'Email field is required';
 
 const Newsletter = () => {
+  const [error, setError] = useState('');
+  const [text, setText] = useState('');
   const texts = useMemo(
     () => [
       'Exclusive access to new abstract images and collections',
@@ -48,7 +50,8 @@ const Newsletter = () => {
         return;
       }
     } else {
-      //   const [errorMessage] = result.errors;
+      const [error] = result.errors;
+      setError(error);
     }
   };
   return (
@@ -65,7 +68,16 @@ const Newsletter = () => {
         </div>
         <form className={styles.newsletter__form} onSubmit={onSubmit}>
           <div className={styles.newsletter__fieldContainer}>
-            <EmailField id="email" placeholder="Enter your email" />
+            <EmailField
+              id="email"
+              placeholder="Enter your email"
+              error={error}
+              onChange={(val: string) => {
+                setText(val);
+                setError('');
+              }}
+              value={text}
+            />
             <span>We only send you the best! No spam.</span>
           </div>
           <div>
