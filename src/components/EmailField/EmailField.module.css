@@ -1,0 +1,95 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-size-sm);
+  line-height: var(--text-line-sm);
+  max-width: 640px;
+}
+
+.label {
+  color: #404040;
+}
+
+.input {
+  width: 100%;
+  height: var(--space-9);
+  padding: 0 var(--space-4);
+  border-radius: var(--space-1);
+  border: 1px solid #e5e5e5;
+  background-color: #fafafa;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--color-text-light);
+}
+
+.input:focus {
+  border-color: #444ce7;
+  box-shadow: 0 0 0 3px #e9eafc;
+}
+
+.hint {
+  color: var(--color-text-light);
+}
+
+/* ---------------- NORMAL ---------------- */
+
+.field:not(.disabled):not(.error) .input:hover {
+  border-color: #bdbdbd;
+}
+
+/* ---------------- FILLED ---------------- */
+
+.filled .input {
+  color: #1a1a1a;
+}
+
+/* ---------------- FOCUSED ---------------- */
+
+.field:not(.error) .input:focus {
+  background: #ffffff;
+  border-color: #4f5bff;
+  box-shadow: 0 0 0 3px rgba(79, 91, 255, 0.15);
+}
+
+/* ---------------- DISABLED ---------------- */
+
+.disabled .input {
+  background: #ededed;
+  border-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.disabled .label {
+  color: #9e9e9e;
+}
+
+.disabled .hint {
+  color: #bdbdbd;
+}
+
+.error .input {
+  border-color: #e53935;
+  background: #ffffff;
+}
+
+.error .input:focus {
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
+}
+
+.error .icon {
+  border-color: #e53935;
+  color: #e53935;
+}
+
+.errorMessage {
+  color: #e53935;
+}
